@@ -1,16 +1,14 @@
-"""A framework for data piping in python"""
-# pylint: disable=unused-import
 from .context import Context, ContextBase
-from .expression import Expression
-from .operator import Operator
+from .expression import Expression, register_array_ufunc
+from .function import FunctionCall, register_func
+from .operator import Operator, OperatorCall, register_operator
+from .reference import ReferenceAttr, ReferenceItem
 from .symbolic import Symbolic
-from .utils import DataEnv, evaluate_expr, functype, options, options_context
-from .register import (
-    register_func,
-    register_operator,
-    register_piping,
-    register_verb,
-    unregister,
-)
+from .utils import evaluate_expr
+from .verb import VerbCall, register_verb
+from .piping import register_piping, _patch_default_classes
 
-__version__ = "0.4.5"
+__version__ = "0.13.1"
+
+register_piping(">>")
+_patch_default_classes()

@@ -101,7 +101,7 @@ export/
 site/
 
 # poetry
-poetry.lock
+# poetry.lock
 
 # backup files
 *.bak
@@ -114,3 +114,5 @@ docs/api/
 .history/
 
 docs/index.md
+_t.ipynb
+_t.py
